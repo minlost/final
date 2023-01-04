@@ -88,7 +88,7 @@ const sendData = async () => {
     const data = await response.json()
     // enter you logic when the fetch is successful
     console.log(data)
-    window.location.href = "http://127.0.0.1:5500/thankyoupage.html"
+    window.location.href = "/thankyoupage.html"
   } catch (error) {
     // enter your logic for when there is an error (ex. error toast)
 
