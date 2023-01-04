@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apartmán Dobrá nadějte</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div id="overlay" class="overlay"></div>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="mobile-main-menu">
+      <ul>
+        <li class="mobile-only"><a href="index.html">Hlávní Stránka</a></li>
+        <li class="mobile-only">
+          <a href="ubytovani.html">Ubytování</a>
+        </li>
+        <li class="mobile-only"><a href="cenik.html">Cenik</a></li>
+        <li class="mobile-only"><a href="rezervace.html">Rezervace</a></li>
+        <li class="mobile-only"><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+    <!-- Header -->
+    <header class="main-header">
+      <div class="logo">
+        <a href="index.html">
+          <img src="img/logo.png" alt="DobraNadeje" />
+        </a>
+      </div>
+      <nav class="desktop-main-menu">
+        <ul>
+          <li><a href="index.html">Hlávní Stránka</a></li>
+          <li><a href="ubytovani.html">Ubytování</a></li>
+          <li><a href="cenik.html">Ceník</a></li>
+          <li><a href="rezervace.html">Rezervace</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hamburger menu -->
+    <button id="menu-btn" class="hamburger">
+      <span class="hamburger-top"></span>
+      <span class="hamburger-mid"></span>
+      <span class="hamburger-bottom"></span>
+    </button>
+    <!-- Content -->
+
+    <section class="section-d contact">
+      <div class="main-content-d contact">
+        <h1 class="page-main-heading">Nezávazná rezervace</h1>
+        <form>
+          <select required id="apartman" name="aparmant">
+            <option value="ap1">Apartmán 1</option>
+            <option value="ap2">Apartmán 2</option>
+          </select>
+
+          <h3>Kontaktní údaje</h3>
+
+          <input required type="text" placeholder="Jméno" id="fname" />
+
+          <input required type="text" placeholder="Příjmení" id="lname" />
+          <input
+            required
+            type="number"
+            placeholder="Počet osob"
+            id="numberOfG"
+          />
+          <input required type="email" placeholder="Email" id="email" />
+          <input required type="number" placeholder="Telefon" id="tel" />
+          <h3>Pobyt od-do</h3>
+
+          <input
+            required
+            type="text"
+            placeholder="Datum přijzdu"
+            onfocus="(this.type='date')"
+            id="dateFrom"
+          />
+
+          <input
+            required
+            type="text"
+            placeholder="Datum odjezdu"
+            onfocus="(this.type='date')"
+            id="dateTo"
+          />
+        </form>
+        <button id="testBtn">Odeslat</button>
+      </div>
+    </section>
+
+    <!-- Fotter -->
+    <footer>
+      <ul>
+        <li>Little wolf consulting &copy; 2022</li>
+        <li><a href="https://www.uherske-hradiste.cz">MIC</a></li>
+        <li><a href="https://lfs.cz/">LFŠ</a></li>
+        <li><a href="https://slavnostivinauh.cz/">SLAVNOSTI VÍNA</a></li>
+      </ul>
+    </footer>
+    <script src="js/script.js"></script>
+    <script src="js/email.js"></script>
+  </body>
+</html>
