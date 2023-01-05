@@ -30,6 +30,7 @@ ul {
   font-family: "Parisienne", cursive;
   margin-bottom: 20px;
   margin-top: 20px;
+  text-align: center;
 }
 
 .highlight {
@@ -581,9 +582,13 @@ footer ul li a:hover {
   height: auto;
 }
 
-.section-d img {
+.img-ubytovani-main {
   width: 400px;
+  height: 300px;
   margin-bottom: 30px;
+  background-image: url("../img//hero.JPG");
+  background-position: center;
+  background-size: cover;
 }
 .section-d-main-text {
   max-width: 60%;
@@ -609,6 +614,12 @@ footer ul li a:hover {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   padding: 20px;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+.con-ap .div-pricelist {
+  text-align: left;
+  margin-top: 5px;
 }
 .con-ap h2 {
   margin-bottom: 20px;
@@ -864,6 +875,13 @@ select {
   }
 }
 
+@media (max-width: 1600px) {
+  .main-content-d {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 @media (max-width: 660px) {
   /* Hide desktop menu */
   .desktop-main-menu {
@@ -925,6 +943,7 @@ select {
   }
   footer ul li {
     line-height: 1rem;
+    margin: 0;
   }
 
   .logo {
@@ -1016,7 +1035,7 @@ select {
   .section-d-main-text {
     max-width: 80%;
   }
-  .section-d img {
+  .img-ubytovani-main {
     width: 80vw;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   }
