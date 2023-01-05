@@ -15,6 +15,7 @@ const overlayGal = document.querySelector(".overlay-bg")
 const currImage = document.querySelector(".curr-image ")
 
 let imageGaleryNumber = 0
+let currApp = 1
 
 const faX = document.querySelector(".fa-x").addEventListener("click", () => {
   overlayGal.style.display = "none"
@@ -23,11 +24,20 @@ const faX = document.querySelector(".fa-x").addEventListener("click", () => {
 const arrRight = document
   .querySelector(".fa-arrow-right")
   .addEventListener("click", () => {
-    if (imageGaleryNumber >= imagesAp.length - 1) {
-      return
+    if (currApp === 1) {
+      if (imageGaleryNumber >= imagesAp.length - 1) {
+        return
+      } else {
+        imageGaleryNumber++
+        currImage.style.backgroundImage = `url(img/ap1/ap1-${imageGaleryNumber}.JPG)`
+      }
     } else {
-      imageGaleryNumber++
-      currImage.style.backgroundImage = `url(img/ap1/ap1-${imageGaleryNumber}.JPG)`
+      if (imageGaleryNumber >= imagesAp2.length - 1) {
+        return
+      } else {
+        imageGaleryNumber++
+        currImage.style.backgroundImage = `url(img/ap2/ap2-${imageGaleryNumber}.JPG)`
+      }
     }
   })
 const arrLeft = document
@@ -37,6 +47,7 @@ const arrLeft = document
       return
     } else {
       imageGaleryNumber--
+
       currImage.style.backgroundImage = `url(img/ap1/ap1-${imageGaleryNumber}.JPG)`
     }
   })
@@ -50,6 +61,7 @@ function fillImages() {
   imagesAp.forEach((image, index) => {
     image.style.backgroundImage = `url(img/ap1/ap1-${index}.JPG)`
     image.addEventListener("click", () => {
+      currApp = 1
       overlayGal.style.display = "flex"
       currImage.style.backgroundImage = `url(img/ap1/ap1-${index}.JPG)`
       imageGaleryNumber = index
@@ -58,10 +70,12 @@ function fillImages() {
 }
 function fillImages2() {
   imagesAp2.forEach((image, index) => {
-    image.style.backgroundImage = `url(img/ap1/ap1-${index}.JPG)`
+    image.style.backgroundImage = `url(img/ap2/ap2-${index}.JPG)`
     image.addEventListener("click", () => {
+      currApp = 2
+
       overlayGal.style.display = "flex"
-      currImage.style.backgroundImage = `url(img/ap1/ap1-${index}.JPG)`
+      currImage.style.backgroundImage = `url(img/ap2/ap2-${index}.JPG)`
       imageGaleryNumber = index
     })
   })

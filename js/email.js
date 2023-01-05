@@ -4,6 +4,7 @@ let optionAparmant = document
   .querySelector("#apartman")
   .addEventListener("change", (e) => {
     emailData.apartman = e.target.value
+    numberOfG.value = ""
   })
 
 const fName = document
@@ -16,11 +17,19 @@ const lName = document
   .addEventListener("change", (e) => {
     emailData.prijmeni = e.target.value
   })
-const numberOfG = document
-  .querySelector("#numberOfG")
-  .addEventListener("change", (e) => {
-    emailData.pocet = e.target.value
-  })
+
+const numberOfG = document.querySelector("#numberOfG")
+
+numberOfG.addEventListener("change", (e) => {
+  if (emailData.apartman === "ap1") {
+    numberOfG.max = 5
+    numberOfG.min = 1
+  } else {
+    numberOfG.min = 1
+    numberOfG.max = 3
+  }
+  emailData.pocet = e.target.value
+})
 const emailDatas = document
   .querySelector("#email")
   .addEventListener("change", (e) => {
