@@ -89,6 +89,7 @@ ul {
   background-color: transparent;
   font-family: inherit;
   font-size: 1rem;
+  color: #000;
 }
 #testBtn:hover {
   background-color: rgba(111, 209, 116, 0.5);
@@ -765,6 +766,9 @@ form input {
   padding: 15px 30px;
   font-size: 1.3rem;
   border: none;
+}
+form:last-child {
+  margin-bottom: 10px;
 }
 
 .my-wrapper {
