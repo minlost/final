@@ -752,25 +752,36 @@ footer ul li a:hover {
 
 /* Form */
 
-/* form {
+form {
   background-color: #fff;
   padding: 30px;
   font-family: inherit;
   display: flex;
   flex-direction: column;
   font-size: 1.2rem;
-} */
-/* form input {
+}
+form input {
   padding: 15px 30px;
   font-size: 1.3rem;
   border: none;
-} */
+}
 
+.my-wrapper {
+  padding: 5%;
+} /* demo-only */
+
+.input-min-width-100p {
+  min-width: 100%;
+}
+
+.input-min-width-95p {
+  min-width: 95%;
+}
 form h3 {
   margin-bottom: 5px;
 }
 
-/* input {
+input {
   text-align: center;
 }
 
@@ -790,7 +801,7 @@ input[type="date"] {
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
   min-height: 1.2em;
-} */
+}
 
 .section-d.contact {
   min-height: 95vh;
