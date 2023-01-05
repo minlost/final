@@ -10,14 +10,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     />
-    <script src="//code.jquery.com/jquery.min.js"></script>
-    <link
-      href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
 
   <body>
@@ -74,13 +66,6 @@
           <input required type="text" placeholder="Jméno" id="fname" />
 
           <input required type="text" placeholder="Příjmení" id="lname" />
-
-          <input
-            type="date"
-            class="form-control input-min-width-95p"
-            placeholder="date input"
-          />
-
           <input
             required
             type="number"
@@ -89,23 +74,16 @@
           />
           <input required type="email" placeholder="Email" id="email" />
           <input required type="number" placeholder="Telefon" id="tel" />
-          <h3>Pobyt od-do</h3>
-
+          <h5>Pobyt od:</h5>
           <input
             required
             type="date"
+            placeholder="Datum přijzdu"
             id="dateFrom"
-            class="form-control input-min-width-95p"
-            placeholder="date input"
           />
+          <h5>Pobyt do:</h5>
 
-          <input
-            required
-            type="date"
-            id="dateTo"
-            class="form-control input-min-width-95p"
-            placeholder="date input"
-          />
+          <input required type="date" id="dateTo" />
         </form>
         <button id="testBtn">Odeslat</button>
       </div>
