@@ -66,8 +66,16 @@
           <input required type="text" placeholder="Jméno" id="fname" />
 
           <input required type="text" placeholder="Příjmení" id="lname" />
-          <input required type="number" placeholder="Počet osob" id="numberOfG"
-          min="1" max="5" inputmode="decimal />
+          <input
+            required
+            type="number"
+            placeholder="Počet osob"
+            id="numberOfG"
+            min="1"
+            max="5"
+            inputmode="numeric"
+            pattern="[0-9]*"
+          />
           <input required type="email" placeholder="Email" id="email" />
           <input required type="number" placeholder="Telefon" id="tel" />
           <h5>Pobyt od:</h5>
