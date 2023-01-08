@@ -1,11 +1,30 @@
-let app = "ap1"
+const cookie = document.cookie
+let optionAp = getCookie("optionAp")
+let optionAparmant = document.querySelector("#apartman")
+const numberOfG = document.querySelector("#numberOfG")
+const btn = document.querySelector("#testBtn")
 
-let optionAparmant = document
-  .querySelector("#apartman")
-  .addEventListener("change", (e) => {
-    emailData.apartman = e.target.value
-    numberOfG.value = ""
-  })
+const emailData = {
+  apartman: "ap1",
+  jmeno: "",
+  prijmeni: "",
+  pocet: "",
+  email: "",
+  tel: "",
+  pDatum: "",
+  oDatum: "",
+}
+
+function getCookie(name) {
+  let value = `; ${document.cookie}`
+  let parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(";").shift()
+}
+
+optionAparmant.addEventListener("change", (e) => {
+  emailData.apartman = e.target.value
+  numberOfG.value = ""
+})
 
 const fName = document
   .querySelector("#fname")
@@ -18,15 +37,13 @@ const lName = document
     emailData.prijmeni = e.target.value
   })
 
-const numberOfG = document.querySelector("#numberOfG")
-
 numberOfG.addEventListener("change", (e) => {
   if (emailData.apartman === "ap1") {
-    numberOfG.max = 5
-    numberOfG.min = 1
-  } else {
     numberOfG.min = 1
     numberOfG.max = 3
+  } else {
+    numberOfG.max = 5
+    numberOfG.min = 1
   }
   emailData.pocet = e.target.value
 })
@@ -43,6 +60,7 @@ const telData = document
 const dateFrom = document
   .querySelector("#dateFrom")
   .addEventListener("change", (e) => {
+    changeDate()
     emailData.pDatum = e.target.value
   })
 const dateTo = document
@@ -51,29 +69,17 @@ const dateTo = document
     emailData.oDatum = e.target.value
   })
 
-const emailData = {
-  apartman: "ap1",
-  jmeno: "",
-  prijmeni: "",
-  pocet: "",
-  email: "",
-  tel: "",
-  pDatum: "",
-  oDatum: "",
-}
-
-const btn = document.querySelector("#testBtn")
-
 btn.addEventListener("click", () => {
   console.log(emailData.pDatum, emailData.oDatum)
   if (
-    (emailData.apartman == "" || emailData.jmeno == "",
-    emailData.prijmeni == "",
-    emailData.pocet == "",
-    emailData.email == "",
-    emailData.tel == "",
-    emailData.pDatum == "",
-    emailData.oDatum == "")
+    emailData.apartman == "" ||
+    emailData.jmeno == "" ||
+    emailData.prijmeni == "" ||
+    emailData.pocet == "" ||
+    emailData.email == "" ||
+    emailData.tel == "" ||
+    emailData.pDatum == "" ||
+    emailData.oDatum == ""
   ) {
     alert("Doplňte všechny údaje")
 
@@ -97,10 +103,44 @@ const sendData = async () => {
     const data = await response.json()
     // enter you logic when the fetch is successful
     console.log(data)
-    window.location.href = "/thankyoupage.html"
+    window.location.assign("/thankyoupage.html")
   } catch (error) {
     // enter your logic for when there is an error (ex. error toast)
 
     console.log(error)
   }
+}
+
+function chckOpAp() {
+  if (optionAp == 1) {
+    emailData.apartman = "ap1"
+    document.getElementById("apartman").value = "ap1"
+  } else if (optionAp == 2) {
+    emailData.apartman = "ap2"
+    document.getElementById("apartman").value = "ap2"
+    console.log(emailData)
+  }
+}
+chckOpAp()
+
+function setMindate() {
+  document.getElementById("dateFrom").min = new Date()
+    .toISOString()
+    .split("T")[0]
+  document.getElementById("dateTo").min = new Date().toISOString().split("T")[0]
+}
+setMindate()
+
+document.getElementById("test1").addEventListener("click", () => {
+  console.log(emailData)
+})
+
+function changeDate() {
+  let parts = document.getElementById("dateFrom").value.split("-")
+  let aviableDate = new Date(parts[0], parts[1] - 1, parts[2])
+
+  aviableDate.setDate(aviableDate.getDate() + 3)
+  document.getElementById("dateTo").min = aviableDate
+    .toISOString()
+    .split("T")[0]
 }

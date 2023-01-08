@@ -586,7 +586,7 @@ footer ul li a:hover {
   width: 400px;
   height: 300px;
   margin-bottom: 30px;
-  background-image: url("../img//hero.JPG");
+  background-image: url("../img/hero-2.JPG");
   background-position: center;
   background-size: cover;
 }
@@ -773,6 +773,9 @@ form {
   flex-direction: column;
   font-size: 1.2rem;
 }
+#apartman {
+  margin-top: 10px;
+}
 form input {
   padding: 15px 30px;
   font-size: 1.3rem;
@@ -882,7 +885,7 @@ select {
   }
 }
 
-@media (max-width: 660px) {
+@media (max-width: 860px) {
   /* Hide desktop menu */
   .desktop-main-menu {
     display: none;
