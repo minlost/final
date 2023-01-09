@@ -21,6 +21,14 @@ function getCookie(name) {
   if (parts.length === 2) return parts.pop().split(";").shift()
 }
 
+function ValidateEmail(mail) {
+  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
+    return false
+  }
+  alert("Zadali jste chybný email")
+  return true
+}
+
 optionAparmant.addEventListener("change", (e) => {
   emailData.apartman = e.target.value
   numberOfG.value = ""
@@ -71,6 +79,11 @@ const dateTo = document
 
 btn.addEventListener("click", () => {
   console.log(emailData.pDatum, emailData.oDatum)
+
+  if (ValidateEmail(emailData.email)) {
+    return
+  }
+
   if (
     emailData.apartman == "" ||
     emailData.jmeno == "" ||
