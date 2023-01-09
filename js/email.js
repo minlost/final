@@ -114,12 +114,9 @@ const sendData = async () => {
       }),
     })
     const data = await response.json()
-    // enter you logic when the fetch is successful
     console.log(data)
     window.location.assign("thankyoupage.html")
   } catch (error) {
-    // enter your logic for when there is an error (ex. error toast)
-
     console.log(error)
   }
 }
