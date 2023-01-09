@@ -9,6 +9,10 @@ const imagesAp = document.querySelectorAll(".img-ap")
 const imagesAp2 = document.querySelectorAll(".img-ap2")
 const overlayGal = document.querySelector(".overlay-bg")
 const currImage = document.querySelector(".curr-image ")
+const faX = document.querySelector(".fa-x")
+
+const arrRight = document.querySelector(".fa-arrow-right")
+const arrLeft = document.querySelector(".fa-arrow-left")
 
 hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("open")
@@ -16,61 +20,6 @@ hamburger.addEventListener("click", () => {
   document.body.classList.toggle("stop-scrolling")
   mobileMenu.classList.toggle("show-menu")
 })
-
-const faX = document.querySelector(".fa-x").addEventListener("click", () => {
-  overlayGal.style.display = "none"
-})
-
-const arrRight = document
-  .querySelector(".fa-arrow-right")
-  .addEventListener("click", () => {
-    if (currApp === 1) {
-      if (imageGaleryNumber >= imagesAp.length - 1) {
-        return
-      } else {
-        imageGaleryNumber++
-        currImage.style.backgroundImage = `url(img/ap1/ap1-${imageGaleryNumber}.JPG)`
-      }
-    } else {
-      if (imageGaleryNumber >= imagesAp2.length - 1) {
-        return
-      } else {
-        imageGaleryNumber++
-        currImage.style.backgroundImage = `url(img/ap2/ap2-${imageGaleryNumber}.JPG)`
-      }
-    }
-  })
-const arrLeft = document
-  .querySelector(".fa-arrow-left")
-  .addEventListener("click", () => {
-    // if (imageGaleryNumber <= 0) {
-    //   return
-    // } else {
-    //   imageGaleryNumber--
-
-    //   currImage.style.backgroundImage = `url(img/ap1/ap1-${imageGaleryNumber}.JPG)`
-    // }
-    if (currApp === 1) {
-      if (imageGaleryNumber <= 0) {
-        return
-      } else {
-        imageGaleryNumber--
-        currImage.style.backgroundImage = `url(img/ap1/ap1-${imageGaleryNumber}.JPG)`
-      }
-    } else {
-      if (imageGaleryNumber <= 0) {
-        return
-      } else {
-        imageGaleryNumber--
-        currImage.style.backgroundImage = `url(img/ap2/ap2-${imageGaleryNumber}.JPG)`
-      }
-    }
-  })
-
-function onClick(element) {
-  document.getElementById("img01").src = element.src
-  document.getElementById("modal01").style.display = "block"
-}
 
 function fillImages() {
   imagesAp.forEach((image, index) => {
@@ -80,10 +29,45 @@ function fillImages() {
       overlayGal.style.display = "flex"
       currImage.style.backgroundImage = `url(img/ap1/ap1-${index}.JPG)`
       imageGaleryNumber = index
+      faX.addEventListener("click", () => {
+        overlayGal.style.display = "none"
+      })
+      arrRight.addEventListener("click", () => {
+        if (currApp === 1) {
+          if (imageGaleryNumber >= imagesAp.length - 1) {
+            return
+          } else {
+            imageGaleryNumber++
+            currImage.style.backgroundImage = `url(img/ap1/ap1-${imageGaleryNumber}.JPG)`
+          }
+        } else {
+          if (imageGaleryNumber >= imagesAp2.length - 1) {
+            return
+          } else {
+            imageGaleryNumber++
+            currImage.style.backgroundImage = `url(img/ap2/ap2-${imageGaleryNumber}.JPG)`
+          }
+        }
+      })
+      arrLeft.addEventListener("click", () => {
+        if (currApp === 1) {
+          if (imageGaleryNumber <= 0) {
+            return
+          } else {
+            imageGaleryNumber--
+            currImage.style.backgroundImage = `url(img/ap1/ap1-${imageGaleryNumber}.JPG)`
+          }
+        } else {
+          if (imageGaleryNumber <= 0) {
+            return
+          } else {
+            imageGaleryNumber--
+            currImage.style.backgroundImage = `url(img/ap2/ap2-${imageGaleryNumber}.JPG)`
+          }
+        }
+      })
     })
   })
-}
-function fillImages2() {
   imagesAp2.forEach((image, index) => {
     image.style.backgroundImage = `url(img/ap2/ap2-${index}.JPG)`
     image.addEventListener("click", () => {
@@ -92,9 +76,45 @@ function fillImages2() {
       overlayGal.style.display = "flex"
       currImage.style.backgroundImage = `url(img/ap2/ap2-${index}.JPG)`
       imageGaleryNumber = index
+      faX.addEventListener("click", () => {
+        overlayGal.style.display = "none"
+      })
+      arrRight.addEventListener("click", () => {
+        if (currApp === 1) {
+          if (imageGaleryNumber >= imagesAp.length - 1) {
+            return
+          } else {
+            imageGaleryNumber++
+            currImage.style.backgroundImage = `url(img/ap1/ap1-${imageGaleryNumber}.JPG)`
+          }
+        } else {
+          if (imageGaleryNumber >= imagesAp2.length - 1) {
+            return
+          } else {
+            imageGaleryNumber++
+            currImage.style.backgroundImage = `url(img/ap2/ap2-${imageGaleryNumber}.JPG)`
+          }
+        }
+      })
+      arrLeft.addEventListener("click", () => {
+        if (currApp === 1) {
+          if (imageGaleryNumber <= 0) {
+            return
+          } else {
+            imageGaleryNumber--
+            currImage.style.backgroundImage = `url(img/ap1/ap1-${imageGaleryNumber}.JPG)`
+          }
+        } else {
+          if (imageGaleryNumber <= 0) {
+            return
+          } else {
+            imageGaleryNumber--
+            currImage.style.backgroundImage = `url(img/ap2/ap2-${imageGaleryNumber}.JPG)`
+          }
+        }
+      })
     })
   })
 }
 
 fillImages()
-fillImages2()
